@@ -7,50 +7,47 @@ var wins = 0;
 var losses = 0;
 var guessesLeft = 10;
 var letterGuessed = [];
-var computerGuess = [];
 
-// Reference HTML by retreieving id with getElementById
 
-var directionsText = document.getElementById("directions-text");
 var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var numOfGuessText = document.getElementById("numofguess-text");
-var userGuessesText = document. getElementById("userguesses-text");
+var userGuessesText = document.getElementById("userguesses-text");
+ 
 
-
-
+ //User Guess
 document.onkeyup = function(event){
-    var userGuess = event.key;
+    guessesLeft --;
+    var userGuess = event.key.toLowerCase();
     letterGuessed.push(userGuess);
-    console.log(userGuess);
+        console.log(userGuess);
 
-    //computer guess choice from computerChoice array
-    var compGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+//computer guess choice from computerChoice array
+    var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+        console.log(computerGuess);
+ 
 
-if((userGuess === computerGuess) && (guessesLeft > 0)){
-    wins++;
-    guessesleft = 10;
-    letterGuess.length = 0;
-    computerGuess.length = 0;
-
-}
-else if ((userGuess !== computerGuess) && (guessesLeft > 0)){
-    guessesLeft = guessesLeft -1;
-}
-
-else{ 
-    losses++;
-    guessesLeft = 10;
-    letterGuessed.length = 0;
-    computerGuess.length = 0;
-}
+    if((userGuess === computerGuess) && (guessesLeft > 0)){
+            wins++;
+            restart();
+    
+    }else if(guessesLeft == 0){
+            losses++;
+            restart();
+    }
 
 winsText.textContent = "Wins: " + wins;
 lossesText.textContent = "Losses: " + losses;
 numOfGuessText.textContent = "Guesses left: " + guessesLeft;
 userGuessesText.textContent = "Your guesses so far: " + letterGuessed;
-}
 
+};
+
+//Function to restart  the game after 10 losses or a win
+var restart = function(){
+    guessesLeft = 10;
+    letterGuessed = [];
+}
 
 
 
