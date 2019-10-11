@@ -14,6 +14,16 @@ var lossesText = document.getElementById("losses-text");
 var numOfGuessText = document.getElementById("numofguess-text");
 var userGuessesText = document.getElementById("userguesses-text");
  
+//computer guess choice from computerChoice array
+var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+
+
+function compGuess(){
+    computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
+
+console.log(computerGuess);
+}
+compGuess();
 
  //User Guess
 document.onkeyup = function(event){
@@ -21,11 +31,7 @@ document.onkeyup = function(event){
     var userGuess = event.key.toLowerCase();
     letterGuessed.push(userGuess);
         console.log(userGuess);
-
-//computer guess choice from computerChoice array
-    var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)];
-        console.log(computerGuess);
- 
+    
 
     if((userGuess === computerGuess) && (guessesLeft > 0)){
             wins++;
@@ -47,7 +53,8 @@ userGuessesText.textContent = "Your guesses so far: " + letterGuessed;
 var restart = function(){
     guessesLeft = 10;
     letterGuessed = [];
-}
+    compGuess();
+};
 
 
 
