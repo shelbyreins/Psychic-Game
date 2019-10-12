@@ -19,9 +19,9 @@ This was my first JavaScript project.
 
  ##### How to play:
 
- - Select a letter a-z
+ - Select a letter from a-z
  - You have 10 guesses to get it right
- - If you get it right, the game automatically restarts and your wins goes up by 1
- - If you go through all 10 guesses your losses will go up by 1
+ - If you get it right, the game automatically restarts and your wins go up by 1
+ - If you get through all 10 guesses without winning, your losses will go up by 1
 
-![Psychic Game](assets/images/psychic-game.gif)
+<img src = "assets/images/Psychic-Game.gif" width="250px"/>
