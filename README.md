@@ -24,4 +24,4 @@ This was my first JavaScript project.
  - If you get it right, the game automatically restarts and your wins goes up by 1
  - If you go through all 10 guesses your losses will go up by 1
 
-![Psychic-Game](assets/images/psychic-game.gif)
+! [Psychic Game](assets/images/psychic-game.gif)
